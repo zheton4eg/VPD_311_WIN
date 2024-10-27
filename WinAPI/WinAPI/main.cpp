@@ -7,6 +7,16 @@ BOOL CALLBACK DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
 INT WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInst, LPSTR lpCmdLine, INT nCmdShow)
 {
+	/*
+	---------------------------
+	WinMain
+	hInstance - экземпляр нашего приложения в памяти (экземпляр *.exe-файла)
+	hPrevInst - предыдущий запущенный экземпляр (Deprecated, использовался в Windows 98).
+	LPSTR lpCmdLine:
+	LPSTR - LongPointer to String (Указатель на строку наподобие const char*)
+	lpCmdLine - коммандная строка запуска приложения
+	nCmdShow - режим отображения окна: Свернуто в окно, Развернуто на весь экран, свернуто в пнель задач......
+	*/
 
 #ifdef MESSAGE_BOX
 	MessageBox
@@ -27,6 +37,23 @@ INT WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInst, LPSTR lpCmdLine, IN
 
 BOOL CALLBACK DlgProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
+	/*
+	---------------------------
+	DlgProc(WndProc) - Процедура окна.
+	ПРОЦЕДУРА - ЭТО ФУНКЦИЯ
+	hwnd (Handler to Window) - окно. Обработчик окна - это число, через которое можно обратиться к окну.
+	---------------------------
+	uMsg - сообщение, отправляемое окну.
+	---------------------------
+	wParam, lParam - параметры сообщения.
+	DWORD - Dourle Word
+	HIWORD - старшее слово;
+	LOWORD - младшее слово;
+
+	Слово (WORD) - это 2 Байта
+	---------------------------
+	*/
+
 	switch (uMsg)
 	{
 	case WM_INITDIALOG:
